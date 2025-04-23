@@ -78,7 +78,7 @@ class InstallWizard:
             subprocess.run(["git", "clone", "https://github.com/NikoYandere/yanix-launcher", repo_dir], check=True)
             self.update_progress(80)
             self.status_label.config(text="Cloning completed successfully.")
-            self.root.after(500, self.complete_install)
+            self.root.after(500, lambda: self.complete_install())
         except subprocess.CalledProcessError as e:
             self.update_progress(0)
             messagebox.showerror("Error", f"An error occurred while cloning the repository:\n{e}")

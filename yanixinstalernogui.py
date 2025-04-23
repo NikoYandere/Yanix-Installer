@@ -2,35 +2,34 @@ import os
 import subprocess
 
 def install():
-    repo_url = "https://github.com/NikoYandere/Yanix-Launcher"
+    repo_url = "https://github.com/NikoYandere/yanix-launcher"
     if os.path.exists("yanix-launcher"):
-        print("O Yanix-Launcher já está instalado.")
+        print("Yanix-Launcher is already installed.")
     else:
-        print("Clonando o repositório...")
+        print("Cloning the repository...")
         subprocess.run(["git", "clone", repo_url])
-        print("Instalação concluída!")
+        print("Installation complete!")
 
 def uninstall():
     if os.path.exists("yanix-launcher"):
-        print("Removendo o Yanix-Launcher...")
+        print("Removing Yanix-Launcher...")
         subprocess.run(["rm", "-rf", "yanix-launcher"])
-        print("Desinstalação concluída!")
+        print("Uninstallation complete!")
     else:
-        print("O Yanix-Launcher não está instalado.")
+        print("Yanix-Launcher is not installed.")
 
 def main():
-    print("select an option")
+    print("Select an option")
     print("1 - Install Yanix")
     print("2 - Uninstall Yanix")
-    escolha = input("Digite o número da opção desejada: ")
+    choice = input("Enter the number of your choice: ")
     
-    if escolha == "1":
+    if choice == "1":
         install()
-    elif escolha == "2":
+    elif choice == "2":
         uninstall()
     else:
-        print("Opção inválida.")
+        print("Invalid option.")
 
 if __name__ == "__main__":
     main()
-
